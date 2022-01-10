@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.lifecycle.asLiveData
 import com.nativedevps.shotvid.R
 import com.nativedevps.shotvid.databinding.ActivityMainsBinding
+import com.nativedevps.shotvid.main.ui.editor_screen.EditorScreenActivity
 import com.nativedevps.shotvid.main.ui.splash.SplashActivity
 import com.nativedevps.support.base_class.ActionBarActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,6 +40,10 @@ class MainActivity : ActionBarActivity<ActivityMainsBinding, MainViewModel>(
             } else {
                 toast("failed: $error")
             }
+        }
+
+        childBinding.editorScreenMaterialButton.setOnClickListener {
+            startActivity(Intent(this, EditorScreenActivity::class.java))
         }
     }
 

@@ -34,6 +34,7 @@
             android:enabled="true"
             android:name="com.nativedevps.shotvid.main.ui.example_list.ExampleListActivity"
             android:configChanges="orientation" />
+        <activity android:name=".main.ui.editor_screen.EditorScreenActivity" />
     </application>
 
 </manifest>
