@@ -1,4 +1,4 @@
-package com.nativedevps.arch.main.ui.splash
+package com.nativedevps.shotvid.main.ui.splash
 
 import android.app.Application
 import android.util.Log

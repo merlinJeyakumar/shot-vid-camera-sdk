@@ -1,18 +1,19 @@
-package com.nativedevps.arch.main.ui.example_list
+package com.nativedevps.shotvid.main.ui.main
+
 
 import android.app.Application
 import com.nativedevps.domain.datasources.local.SettingsConfigurationSource
 import com.nativedevps.domain.datasources.remote.api.RestDataSource
+import com.nativedevps.domain.model.UserModel
 import com.nativedevps.domain.model.configuration.UserProfile
-import com.nativedevps.domain.model.example_list.ExampleApiModel
+import com.nativedevps.domain.model.update_profile.UpdateSendModel
 import com.nativedevps.support.base_class.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 @HiltViewModel
-class ExampleListViewModel @Inject constructor(application: Application) :
-    BaseViewModel(application) {
+class MainViewModel @Inject constructor(application: Application) : BaseViewModel(application) {
 
     @Inject
     lateinit var restDataSource: RestDataSource
@@ -25,17 +26,23 @@ class ExampleListViewModel @Inject constructor(application: Application) :
     override fun onCreate() {
     }
 
-    fun retrieveExampleList(
-        callback: (boolean: Boolean, ExampleApiModel?, error: String?) -> Unit, //todo: replace with specific type
+    fun retrieveUserProfile(
+        callback: (boolean: Boolean, UserModel?, error: String?) -> Unit, //todo: replace with specific type
     ) {
         runOnNewThread {
             showProgressDialog("Loading..")
             try {
-                val exampleList = restDataSource.getExampleList()
+                val profileModel = restDataSource.updateProfile(UpdateSendModel(1,
+                    "Jeyakumar",
+                    "s.merlinjeyakumar@gmail.com",
+                    "S"))
+                if (profileModel != null) {
+                    settingsConfigurationSource.updateUserPreference(profileModel.result.toProfile())
+                }
                 runOnUiThread {
-                    if (!exampleList.isNullOrEmpty()) {
+                    if (profileModel?.result != null) {
                         hideProgressDialog()
-                        callback(true, exampleList, null) //todo
+                        callback(true, profileModel.result, null) //todo
                     } else {
                         throw IllegalStateException("invalid result")
                     }
@@ -49,4 +56,5 @@ class ExampleListViewModel @Inject constructor(application: Application) :
             }
         }
     }
+
 }

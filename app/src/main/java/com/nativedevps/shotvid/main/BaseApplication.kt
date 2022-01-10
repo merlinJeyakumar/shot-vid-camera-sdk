@@ -1,4 +1,4 @@
-package com.nativedevps.arch.main
+package com.nativedevps.shotvid.main
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

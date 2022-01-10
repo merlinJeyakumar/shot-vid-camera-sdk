@@ -1,14 +1,14 @@
-package com.nativedevps.arch.main.ui.example_list
+package com.nativedevps.shotvid.main.ui.example_list
 
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.asLiveData
 import com.nativedevps.domain.model.example_list.ExampleApiModelItem
-import com.nativedevps.arch.R
-import com.nativedevps.arch.databinding.ActivityExampleListBinding
-import com.nativedevps.arch.main.ui.example_list.adapter.ExampleAdapter
-import com.nativedevps.arch.main.ui.splash.SplashActivity
+import com.nativedevps.shotvid.R
+import com.nativedevps.shotvid.databinding.ActivityExampleListBinding
+import com.nativedevps.shotvid.main.ui.example_list.adapter.ExampleAdapter
+import com.nativedevps.shotvid.main.ui.splash.SplashActivity
 import com.nativedevps.support.base_class.ActionBarActivity
 import com.nativedevps.support.utility.view.DialogBox.confirmationDialog
 import com.nativedevps.support.utility.view.DialogBox.listDialog

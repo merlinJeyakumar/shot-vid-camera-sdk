@@ -1,12 +1,12 @@
-package com.nativedevps.arch.main.ui.main
+package com.nativedevps.shotvid.main.ui.main
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.asLiveData
-import com.nativedevps.arch.R
-import com.nativedevps.arch.databinding.ActivityMainsBinding
-import com.nativedevps.arch.main.ui.splash.SplashActivity
+import com.nativedevps.shotvid.R
+import com.nativedevps.shotvid.databinding.ActivityMainsBinding
+import com.nativedevps.shotvid.main.ui.splash.SplashActivity
 import com.nativedevps.support.base_class.ActionBarActivity
 import dagger.hilt.android.AndroidEntryPoint
 import org.jetbrains.anko.toast

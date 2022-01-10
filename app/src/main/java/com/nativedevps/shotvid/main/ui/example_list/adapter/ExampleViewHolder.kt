@@ -1,10 +1,10 @@
-package com.nativedevps.arch.main.ui.example_list.adapter
+package com.nativedevps.shotvid.main.ui.example_list.adapter
 
 import com.bumptech.glide.Glide
 import com.bumptech.glide.signature.ObjectKey
 import com.nativedevps.domain.model.example_list.ExampleApiModelItem
-import com.nativedevps.arch.R
-import com.nativedevps.arch.databinding.ItemExampleListBinding
+import com.nativedevps.shotvid.R
+import com.nativedevps.shotvid.databinding.ItemExampleListBinding
 import com.nativedevps.support.base_class.BaseViewHolder
 
 class ExampleViewHolder(

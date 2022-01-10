@@ -1,4 +1,4 @@
-package com.nativedevps.arch
+package com.nativedevps.shotvid
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
